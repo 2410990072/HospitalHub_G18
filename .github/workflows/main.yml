@@ -1,0 +1,30 @@
+name: Auto-Commit Updates
+
+on:
+  push:
+    branches: [ main ]  # Runs when changes are pushed to 'main'
+  workflow_dispatch:    # Optional: Allows manual triggering
+
+jobs:
+  commit-changes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Ensures full Git history
+
+      - name: Set Up Git
+        run: |
+          git config --global user.name "HospitalHub-G18-Bot"
+          git config --global user.email "hospitalhub-g18-bot@users.noreply.github.com"
+
+      - name: Update Timestamp File
+        run: |
+          echo "Last updated: $(date)" > last-updated.txt
+
+      - name: Commit Changes
+        run: |
+          git add last-updated.txt
+          git commit -m "Automated update: $(date)"
+          git push
