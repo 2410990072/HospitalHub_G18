@@ -1,0 +1,78 @@
+body {
+    font-family: 'Lato', sans-serif;
+    background-image: url("IMAGES/hospital-background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    color: rgb(16, 16, 16);
+    text-shadow: 1px 1px 2px rgb(184, 184, 184);
+}
+  
+
+.appointment-container {
+    width: 100%;
+    max-width: 600px;
+}
+
+.appointment-box {
+    background: #afd8f4;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+
+}
+
+h1 {
+    color: #0b0b0b;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #111111;
+    font-size: 16px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+    text-align: left;
+    display: block;
+    margin-top: 20px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #0e0e0e;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+button {
+    margin-top: 15px;
+    background: #017efb;
+    color: rgb(249, 246, 246);
+    border: none;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+    background: #01346a;
+}
