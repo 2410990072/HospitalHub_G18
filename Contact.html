@@ -4,117 +4,139 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact Us - HospitalHub</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #9dbec6, #f5c2f5);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    }
+
+
+    .container {
+      flex: 1;
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
-      background: linear-gradient(135deg, #9dbec6, #f5c2f5);
+      padding: 30px 20px;
     }
 
-    .container {
+    .card {
       display: flex;
-      width: 90%;
+      flex-wrap: wrap;
+      width: 100%;
       max-width: 1000px;
-      background: rgb(223, 233, 246);
-      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.25);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 0.8s ease-in-out;
     }
 
     .left-side {
       flex: 1;
+      min-width: 300px;
       background: url("IMAGES/Contact.jpg") no-repeat center center/cover;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: rgb(250, 248, 248);
-      text-shadow: 1px 1px 5px #000;
-      padding: 70px;
-    }
-
-    .overlay-text h1 {
-      font-size: 36px;
-      margin: 0;
     }
 
     .right-side {
       flex: 1;
       padding: 40px;
+      background: rgba(255, 255, 255, 0.3);
     }
 
     .right-side h2 {
-      margin-bottom: 20px;
       font-size: 28px;
-      color: #080808;
+      margin-bottom: 20px;
+      color: #1d3557;
     }
 
-    form input, form textarea {
+    .input-group {
+      position: relative;
+      margin-bottom: 15px;
+    }
+
+    .input-group i {
+      position: absolute;
+      top: 50%;
+      left: 12px;
+      transform: translateY(-50%);
+      color: #5d5d5d;
+    }
+
+    .input-group input,
+    .input-group textarea {
       width: 100%;
-      padding: 12px;
-      margin: 10px 0;
+      padding: 12px 12px 12px 40px;
       border-radius: 8px;
-      border: 1px solid #090909;
-      font-size: 19px;
+      border: none;
+      font-size: 16px;
+      background: rgba(255, 255, 255, 0.8);
+      outline: none;
     }
 
-    form button {
-      background-color: #786fb4;
-      color: white;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 8px;
+    .input-group textarea {
+      resize: vertical;
+    }
+
+    button {
+      padding: 12px 25px;
       font-size: 16px;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      border: none;
+      color: white;
+      border-radius: 10px;
       cursor: pointer;
+      transition: 0.3s ease;
       margin-top: 10px;
     }
 
-    form button:hover {
-      background-color: #2c226c;
+    button:hover {
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     }
 
-    /* Popup Styling */
+    /* Popup */
     .popup {
       display: none;
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(21, 20, 20, 0.6);
+      background: rgba(0, 0, 0, 0.5);
       justify-content: center;
       align-items: center;
       z-index: 999;
     }
 
     .popup-content {
-      background: #fff;
-      padding: 30px 40px;
+      background: white;
+      padding: 30px;
       border-radius: 12px;
       text-align: center;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-      animation: popupAnim 0.3s ease-out;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+      animation: popupAnim 0.4s ease-out;
     }
 
     .popup-content h3 {
-      margin-bottom: 10px;
       color: green;
+      margin-bottom: 10px;
     }
 
     .popup-content button {
+      background: #2575fc;
       margin-top: 15px;
-      padding: 10px 20px;
-      border: none;
-      background: #31238d;
-      color: white;
-      border-radius: 6px;
-      font-size: 16px;
-      cursor: pointer;
     }
 
     .popup-content button:hover {
-      background: #4a3fb7;
+      background: #195dd9;
     }
 
     @keyframes popupAnim {
@@ -127,26 +149,77 @@
         transform: scale(1);
       }
     }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 15px 0;
+      background: #1d3557;
+      color: white;
+    }
+
+    .social-icons a {
+      margin: 0 10px;
+      color: #fff;
+      font-size: 18px;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.2);
+    }
+
+    @media (max-width: 768px) {
+      .card {
+        flex-direction: column;
+      }
+
+      .left-side, .right-side {
+        width: 100%;
+        border-radius: 0;
+      }
+    }
   </style>
 </head>
 <body>
 
   <div class="container">
-    <div class="left-side">
-      <div class="overlay-text">
-        <h1>Contact HospitalHub</h1>
-      </div>
-    </div>
+    <div class="card">
+      <div class="left-side"></div>
 
-    <div class="right-side">
-      <form id="contactForm">
+      <div class="right-side">
         <h2>Send Us a Message</h2>
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <input type="tel" placeholder="Phone Number" />
-        <textarea placeholder="Your Message" rows="5" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
+        <form id="contactForm">
+          <div class="input-group">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Your Name" required />
+          </div>
+          <div class="input-group">
+            <i class="fas fa-envelope"></i>
+            <input type="email" placeholder="Your Email" required />
+          </div>
+          <div class="input-group">
+            <i class="fas fa-phone"></i>
+            <input type="tel" placeholder="Phone Number" />
+          </div>
+          <div class="input-group">
+            <i class="fas fa-comment-dots"></i>
+            <textarea rows="4" placeholder="Your Message" required></textarea>
+          </div>
+          <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+        </form>
+      </div>
     </div>
   </div>
 
@@ -158,6 +231,16 @@
       <button onclick="closePopup()">Close</button>
     </div>
   </div>
+
+  <!-- Footer -->
+  <footer>
+    <div>Connect with us:</div>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+  </footer>
 
   <script>
     const form = document.getElementById("contactForm");
@@ -176,3 +259,4 @@
 
 </body>
 </html>
+
