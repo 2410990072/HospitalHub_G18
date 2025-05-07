@@ -21,7 +21,7 @@ body {
   }
   
   /* Form styles */
-  /*and the designing*/
+
   .login-form {
     display: flex;
     flex-direction: column;
