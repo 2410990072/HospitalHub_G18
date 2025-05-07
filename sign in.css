@@ -1,0 +1,37 @@
+/* Reset & Base Styles */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #919ed7, #728aa8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Container */
+  /*designing of this container*/
+  .signin-container {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 12px;
+    width: 360px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Form Styling */
+  .signin-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .signin-form h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+  }
+  
+  /* Input Box */
+  .input-box {
+    margin-bottom: 15px;
+  }
