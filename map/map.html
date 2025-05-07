@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chitkara University Map</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    header {
+      background-color: #065334;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .map-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      height: 0;
+      overflow: hidden;
+    }
+
+    .map-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Chitkara University, Rajpura</h1>
+  </header>
+
+  <div class="map-container">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3430.2587105102894!2d76.65690177434454!3d30.5167006746929!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391029c5e421623f%3A0x3e9ef160f733f1cc!2sChitkara%20University%2C%20Punjab!5e0!3m2!1sen!2sin!4v1714978451231!5m2!1sen!2sin"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+
+</body>
+</html>
+
