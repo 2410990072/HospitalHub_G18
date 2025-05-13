@@ -457,7 +457,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                     </div>
                     <div class="doctor-contact">
-                        <button class="contact-btn"><i class="fas fa-calendar-alt"></i> Book</button>
+                        <button class="contact-btn"><i class="fas fa-calendar-alt"></i>Book</button>
                         <button class="contact-btn"><i class="fas fa-info-circle"></i> Profile</button>
                     </div>
                 `;
